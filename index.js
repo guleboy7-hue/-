@@ -1,3 +1,4 @@
+import http from "http";
 import fetch from "node-fetch";
 
 // ======================
@@ -184,3 +185,8 @@ Price: ${res.price}
 // ======================
 setInterval(scan, 1000*60*5);
 scan();
+http.createServer((req, res) => {
+  res.end("Bot running");
+}).listen(3000);
+
+console.log("웹서버 실행됨");
